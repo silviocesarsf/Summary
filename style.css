@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&family=Lato:wght@100;300;400;700&family=Montserrat:wght@100;400;500;600&family=Poppins:ital,wght@0,200;0,300;0,400;1,100&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background: #E1E9FF;
+    overflow: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    background: url(images/pattern-background-desktop.svg);
+    background-position: top;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+}
+
+section {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 700px;
+    width: 500px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    background: rgb(255, 255, 255);
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.128) ;
+}
+
+.img-top img {
+    border-radius: 20px 20px 0px 0px;
+    width: 100%;
+}
+
+.text {
+    margin: 2rem 0;
+}
+
+.text h1 {
+    color: rgb(50, 51, 60);
+    font-weight: bolder;
+    margin-bottom: 1rem;
+}
+
+.text p {
+    font-weight: 500;
+    color: rgb(73, 73, 73);
+}
+
+.plan {
+    top: 66%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    background: #eef2ff62;
+    height: 80px;
+    width: 70%;
+    padding: 1rem 1rem;
+    border-radius: 10px;
+}
+
+.plan p {
+    font-size: 1.2em;
+    font-weight: 900;
+}
+
+.plan .price {
+    font-size: 1em;
+    font-weight: 300;
+}
+
+.plan .change {
+    position: relative;
+    top: -2.6rem;
+    font-size: .8em;
+    text-align: right;
+    color: rgb(45, 45, 164);
+}
+
+.plan img {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    position:absolute;
+}
+
+.buttons {
+    position: relative;
+    top: 15%;
+}
+
+.buttons button {
+    width: 70%;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background: rgb(46, 46, 220);
+    color: white;
+    font-weight: bold;
+    box-shadow: 1px 2px 10px rgba(24, 24, 112, 0.423) ;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.buttons button:hover {
+    background:rgb(40, 40, 164);
+    box-shadow: 1px 2px 10px rgba(24, 24, 112, 0.686) ;
+}
+
+.buttons p {
+    color: rgb(31, 31, 189);
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 800;
+}
+
+.off {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.on {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-purchase {
+    border-top: 5px solid rgb(31, 31, 189);
+    z-index: 6;
+    transition: .5s;
+    left: 50%;
+    top: -30%;
+    height: 400px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 2px 10px rgba(31, 31, 189, 0.518);
+}
+
+.modal-purchase h1 {
+    color: rgb(31, 31, 189);
+    font-weight: bold;
+    font-size: 1.9em;
+    margin-bottom: 1rem;
+}
+
+.modal-purchase img {
+    position: relative;
+    animation: sucess 3s ease-in-out infinite;
+    height: 100px;
+    margin-top: 1.5rem;
+    background: transparent;
+    box-shadow: 2px 5px 5px rgb(85, 96, 255);
+    border-radius: 100%;
+}
+
+.background {
+    position: relative;
+    transition: .5s;
+    height: 100vh;
+    width: 100%;
+    z-index: 4;
+    background: rgba(0, 0, 0, 0.793);
+}
+
+.background-off {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.background-on {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-cancel {
+    top: -50%;
+    border-top: 5px solid rgb(192, 53, 53);
+    transition: .5s;
+    z-index: 6;
+    height: 400px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-cancel h1 {
+    margin: 2rem;
+    font-size: 2em;
+    color: rgb(192, 53, 53);
+}
+
+.modal-cancel img {
+    height: 100px;
+    animation: error 2s ease-in-out infinite;
+}
+
+@keyframes sucess {
+    0%, 100% {
+        transform: scale(100%);
+    }
+    50% {
+        transform: scale(120%);
+    }
+}
+
+@keyframes error {
+    0%, 50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        top: 10%;
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width:768px) {
+    section {
+        height: 500px;
+        width: 300px;
+    }
+
+    .text {
+        margin: 0;
+    }
+
+    .text h1 {
+        margin-top: 10px;
+        font-size: 1.2em;
+        font-weight: bolder;
+    }
+
+    .text p {
+        font-weight: 500;
+        color: rgb(73, 73, 73);
+        font-size: 0.8em;
+        padding: 0 1rem;
+    }
+
+    .plan {
+        height: 30px;
+        width: 90%;
+        top: 59%;
+    }
+
+    .plan p {
+        font-size: 0.8em;
+        font-weight: 900;
+    }
+    
+    .plan .price {
+        font-size: .8em;
+        font-weight: 300;
+    }
+    
+    .plan .change {
+        position: relative;
+        top: -2rem;
+        font-size: .8em;
+        text-align: right;
+        color: rgb(45, 45, 164);
+    }
+    
+    .plan img {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        position:absolute;
+        
+    }
+
+    .buttons {
+        position: relative;
+        top: 20%;
+    }
+
+    .buttons button {
+        width: 40%;
+        height: 40px;
+        border: none;
+        border-radius: 10px;
+        background: rgb(46, 46, 220);
+        color: white;
+        font-weight: bold;
+        font-size: .7em;
+        box-shadow: 1px 2px 10px rgba(24, 24, 112, 0.423) ;
+        margin-bottom: 20px;
+        cursor: pointer;
+        transition: .5s;
+    }
+
+    .buttons p {
+       font-size: .7em;
+    }
+
+    .modal-purchase {
+        height: 300px;
+        width: 400px;
+    }
+
+    .modal-purchase h1 {
+        font-size: 1.8em;
+    }
+
+    .modal-cancel {
+        height: 300px;
+        width: 400px;
+    }
+
+    .modal-cancel h1 {
+        font-size: 1.8em;
+    }
+}
